@@ -1,0 +1,10 @@
+#root {
+  height: 100vh;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  background-color: #242021;
+  overflow-y: scroll;
+}

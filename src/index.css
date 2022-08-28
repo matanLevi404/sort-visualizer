@@ -1,0 +1,60 @@
+|* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: rgb(58, 133, 137);
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.bar-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  height: 88.18380098%;
+  z-index: 0;
+}
+
+.material-symbols-outlined {
+  font-size: 45px;
+  margin-left: 5px;
+}
+
+.divider {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  border-radius: 0px !important;
+  background-color: #1a2027 !important;
+  color: "#fff" !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.under-label {
+  margin-top: 7px;
+  font-size: 10px;
+  font-family: Russo One, sans-serif;
+  text-decoration-thickness: 2px;
+}
