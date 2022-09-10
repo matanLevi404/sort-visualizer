@@ -15,7 +15,12 @@ import { Typography } from "@mui/material";
 import { typographyTheme } from "../themes/TypographyTheme";
 import { menuItemTheme } from "../themes/MenuItemTheme";
 
-export default function NavBar({ dataArray, setDataArray, generateArray }) {
+export default function NavBar({
+  dataArray,
+  setDataArray,
+  generateArray,
+  maxHeight,
+}) {
   const [isAnimated, setIsAnimated] = useState(false);
   const [sortMethod, setSortMethod] = useState("selection");
   const [timeout, setTimeout] = useState(30);
@@ -99,7 +104,7 @@ export default function NavBar({ dataArray, setDataArray, generateArray }) {
             valueLabelDisplay="auto"
             disabled={isAnimated}
             onChange={(e) => {
-              let arr = generateArray({ arraySize: e.target.value });
+              let arr = generateArray({ arraySize: e.target.value, maxHeight });
               setDataArray(arr);
             }}
           />

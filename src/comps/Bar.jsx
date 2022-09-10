@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-export default function Bar({ amount, barData }) {
+export default function Bar({ amount, barData, maxHeight }) {
   useEffect(() => {}, []);
 
   return (
@@ -8,7 +8,7 @@ export default function Bar({ amount, barData }) {
       className="animate"
       style={{
         backgroundColor: barData.color,
-        width: `${(4 / amount) * 250}px`,
+        width: `${(4 / amount) * (maxHeight / 2)}px`,
         height: `${barData.height}px`,
       }}
     ></div>
