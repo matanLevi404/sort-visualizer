@@ -10,6 +10,7 @@ export default function Bar({ amount, barData, maxHeight }) {
         backgroundColor: barData.color,
         width: `${(4 / amount) * (maxHeight / 2)}px`,
         height: `${barData.height}px`,
+        margin: "0 1px",
       }}
     ></div>
   );
