@@ -10,7 +10,7 @@ export const typographyTheme = createTheme({
           // Some CSS
           color: "#1a2027",
           fontFamily: "Russo One,sans-serif",
-          fontSize: "45px",
+          fontSize: "25px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

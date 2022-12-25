@@ -57,96 +57,104 @@ export default function NavBar({
         <span class="material-symbols-outlined">grouped_bar_chart</span>
       </Typography>
       <div className="divider">
-        <FormControl
-          sx={{
-            m: 1,
-            minWidth: 120,
-          }}
-        >
-          <Select
-            displayEmpty
-            disabled={isAnimated}
-            inputProps={{ "aria-label": "Without label" }}
-            defaultValue={sortMethod}
-            theme={selectTheme}
-            onChange={(e) => setSortMethod(e.target.value)}
-          >
-            <MenuItem theme={menuItemTheme} value="selection">
-              Selection
-            </MenuItem>
-            <MenuItem theme={menuItemTheme} value="bubble">
-              Bubble
-            </MenuItem>
-            <MenuItem theme={menuItemTheme} value="quick">
-              Quick
-            </MenuItem>
-            <MenuItem theme={menuItemTheme} value="merge">
-              Merge
-            </MenuItem>
-          </Select>
-        </FormControl>
-        <Button
-          variant="contained"
-          disabled={isAnimated}
-          theme={buttonTheme}
-          onClick={animate}
-        >
-          Sort
-        </Button>
-        <div>
-          <Slider
-            theme={sliderTheme}
-            size="small"
-            min={30}
-            max={300}
-            defaultValue={100}
-            aria-label="Small"
-            valueLabelDisplay="auto"
-            disabled={isAnimated}
-            onChange={(e) => {
-              let arr = generateArray({ arraySize: e.target.value, maxHeight });
-              setDataArray(arr);
+        <div className="left">
+          <FormControl
+            sx={{
+              m: 1,
+              minWidth: 120,
             }}
-          />
-          <div
-            className="under-label"
-            style={
-              isAnimated
-                ? {
-                    textDecoration: "line-through #1a2027 2px",
-                    color: "rgba(26, 32, 39, 0.6)",
-                  }
-                : { textDecoration: "none" }
-            }
           >
-            Quantity
-          </div>
-        </div>
-        <div>
-          <Slider
-            theme={sliderTheme}
-            aria-label="Temperature"
-            defaultValue={timeout}
-            valueLabelDisplay="auto"
-            step={10}
-            marks
-            min={0}
-            max={200}
+            <Select
+              displayEmpty
+              disabled={isAnimated}
+              inputProps={{ "aria-label": "Without label" }}
+              defaultValue={sortMethod}
+              theme={selectTheme}
+              onChange={(e) => setSortMethod(e.target.value)}
+            >
+              <MenuItem theme={menuItemTheme} value="selection">
+                Selection
+              </MenuItem>
+              <MenuItem theme={menuItemTheme} value="bubble">
+                Bubble
+              </MenuItem>
+              <MenuItem theme={menuItemTheme} value="quick">
+                Quick
+              </MenuItem>
+              <MenuItem theme={menuItemTheme} value="merge">
+                Merge
+              </MenuItem>
+            </Select>
+          </FormControl>
+          <Button
+            variant="contained"
             disabled={isAnimated}
-            onChange={(e) => setTimeout(e.target.value)}
-          />
-          <div
-            className="under-label"
-            style={
-              isAnimated
-                ? {
-                    textDecoration: "line-through #1a2027 2px",
-                    color: "rgba(26, 32, 39, 0.6)",
-                  }
-                : { textDecoration: "none" }
-            }
+            theme={buttonTheme}
+            onClick={animate}
           >
-            Speed
+            Sort
+          </Button>
+        </div>
+
+        <div className="right">
+          <div>
+            <Slider
+              theme={sliderTheme}
+              size="small"
+              min={30}
+              max={300}
+              defaultValue={100}
+              aria-label="Small"
+              valueLabelDisplay="auto"
+              disabled={isAnimated}
+              onChange={(e) => {
+                let arr = generateArray({
+                  arraySize: e.target.value,
+                  maxHeight,
+                });
+                setDataArray(arr);
+              }}
+            />
+            <div
+              className="under-label"
+              style={
+                isAnimated
+                  ? {
+                      textDecoration: "line-through #1a2027 2px",
+                      color: "rgba(26, 32, 39, 0.6)",
+                    }
+                  : { textDecoration: "none" }
+              }
+            >
+              Quantity
+            </div>
+          </div>
+          <div>
+            <Slider
+              theme={sliderTheme}
+              aria-label="Temperature"
+              defaultValue={timeout}
+              valueLabelDisplay="auto"
+              step={10}
+              marks
+              min={0}
+              max={200}
+              disabled={isAnimated}
+              onChange={(e) => setTimeout(e.target.value)}
+            />
+            <div
+              className="under-label"
+              style={
+                isAnimated
+                  ? {
+                      textDecoration: "line-through #1a2027 2px",
+                      color: "rgba(26, 32, 39, 0.6)",
+                    }
+                  : { textDecoration: "none" }
+              }
+            >
+              Speed
+            </div>
           </div>
         </div>
       </div>

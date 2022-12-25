@@ -42,7 +42,12 @@ html {
   align-items: center;
 }
 
-.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+/* .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  border-radius: 0px !important;
+  background-color: #1a2027 !important;
+  color: "#fff" !important;
+} */
+.test {
   border-radius: 0px !important;
   background-color: #1a2027 !important;
   color: "#fff" !important;
@@ -57,4 +62,48 @@ html {
   font-size: 10px;
   font-family: Russo One, sans-serif;
   text-decoration-thickness: 2px;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right div {
+  margin: 10px;
+}
+
+.material-symbols-outlined {
+  font-size: 25px;
+}
+
+/* Big tablets to 1200px (widths smaller then 1140px row)*/
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets from 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .divider {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+/* Small phones to small tablets from 481px - 767px */
+@media only screen and (max-width: 767px) {
+  .divider {
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    flex-direction: row;
+  }
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
 }
